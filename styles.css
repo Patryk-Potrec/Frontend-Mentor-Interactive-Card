@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.cards-container{
+    position: relative;
+    width: 100%;
+    height: 50%;
+
+    background-image: url("./images/bg-main-mobile.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/******************* Card Design ***********************/
+.card{
+    position: absolute;
+    color: white;
+
+    width: 80%;
+    max-width: 300px;
+    aspect-ratio: 1 / 0.55;
+
+    border-radius: 5px;
+}
+
+.card-front{
+    z-index: 1;
+    top: 40%;
+    left: 5%;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 2fr 1fr 2fr;
+
+    grid-template-areas: 
+    "logo . ."
+    "num num num"
+    "name . exp";
+
+    background-image: url("./images/bg-card-front.png");
+    background-size: cover;
+}
+.card-logo{
+    grid-area: logo;
+    align-self: center;
+    width: 50%;
+}
+.card-number{
+    grid-area: num;
+    align-self: end;
+
+    font-size: 1.1rem;
+    letter-spacing: 1.6px;
+}
+.card-name{
+    grid-area: name;
+    align-self: center;
+
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+}
+.card-expiration{
+    grid-area: exp;
+    align-self: center;
+    justify-self: end;
+
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+    margin-right: 1rem;
+}
+
+.card-logo, .card-number, .card-name{
+    margin-left: 1rem;
+}
+
+.card-back{
+    top: 10%;
+    right: 5%;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    background-image: url("./images/bg-card-back.png");
+    background-size: cover;
+
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+}
+
+.card-cvc{
+    margin-right: 2rem;
+}
+
+
+/*********** Form Design **********/
+
+.form-details{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    grid-template-areas:
+    "cardholder cardholder cardholder cardholder"
+    "number number number number"
+    "fieldset fieldset cvc cvc"
+    "btn btn btn btn";
+
+    width: 100%;
+}
+
+.cardholder-group{
+    width: 95%;
+    grid-area: cardholder;
+}
+
+.number-group{
+    width: 95%;
+    grid-area: number;
+}
+
+.cardholder-group, .number-group{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.cardholder-group, .number-group{
+    margin-left: auto;
+    
+}
+
+.cardholder-group > input, .number-group > input{
+    width: 90%;
+}
+
+.cardholder-group, .number-group, .form-expiration{
+    margin-bottom: 1rem;
+}
+
+/*************Expiration-CVC */
+.form-expiration{
+    display: flex;
+    gap: 10%;
+    border: none;
+    grid-area: fieldset;
+    margin-left: 10%;
+}
+.form-expiration > input{
+    width: 40%;
+}
+
+.cvc-group{
+    display: flex;
+    flex-direction: column;
+    grid-area: cvc;
+}
+
+.cvc-group > input{
+    width: 80%;
+}
+
+/******* Button ******/
+
+.btn-submit{
+    color: white;
+    background: #220930;
+    border-radius: 5px;
+    border: none;
+    width: 85%;
+    height: 3rem;
+    grid-area: btn;
+    margin-left: 5%;
+}
+
+/******General *******/
+
+input{
+    border: #C4C4C6 1px solid;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+label, legend{
+    color: #220930;
+    font-size: 0.6rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    letter-spacing: 1px;
+}
+
+
+
